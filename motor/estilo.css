@@ -20,6 +20,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; overflow: hidden; background: #1b3a5c; font-family: var(--sans); }
 #jogo, #jogo canvas { position: fixed; inset: 0; }
+#jogo canvas { image-rendering: pixelated; }
 #interface { position: fixed; inset: 0; pointer-events: none; }
 #interface > * { pointer-events: auto; }
 [hidden] { display: none !important; }
@@ -164,3 +165,22 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: #1b3a5c; fon
   .comparacao { grid-template-columns: 1fr; }
   .editor { min-height: 220px; }
 }
+
+/* balão de interação sobre o jogador */
+.aviso {
+  position: absolute; left: 0; top: 0; pointer-events: none !important; white-space: nowrap;
+  background: var(--papel); color: var(--tinta); border: 2px solid var(--papel-borda); border-radius: 8px;
+  padding: 3px 8px; font-size: 13px; font-weight: 600; box-shadow: 0 3px 0 rgba(0,0,0,.25);
+}
+.aviso kbd {
+  font: 700 11px var(--mono); background: var(--papel-borda); color: var(--papel);
+  border-radius: 4px; padding: 0 5px; margin-right: 4px;
+}
+
+/* tela de carregamento */
+.carregando {
+  position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 14px;
+  background: #1b3a5c; color: var(--papel); font: 700 28px var(--sans); letter-spacing: .02em;
+}
+.carregando div { width: 220px; height: 10px; border-radius: 99px; background: rgba(255,255,255,.15); overflow: hidden; }
+.carregando i { display: block; height: 100%; width: 0; background: var(--energia); transition: width .2s; }

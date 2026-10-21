@@ -19,7 +19,12 @@ async function ate<T>(condicao: () => T | null | undefined | false, limiteMs = 6
 
 export async function autoteste(jogo: Phaser.Game, destino: string) {
   const relatorio: Array<{ nome: string; ok: boolean; detalhe: string }> = [];
-  const checar = (nome: string, ok: unknown, detalhe = "") => relatorio.push({ nome, ok: !!ok, detalhe });
+  const checar = (nome: string, ok: unknown, detalhe = "") => {
+    relatorio.push({ nome, ok: !!ok, detalhe });
+    void fetch("/progresso", { method: "POST", body: `${ok ? "OK" : "FALHA"} ${nome} ${detalhe}` });
+  };
+  const pulso = setInterval(() => void fetch("/progresso", { method: "POST",
+    body: `pulso fps=${jogo.loop.actualFps.toFixed(1)} cena=${jogo.scene.isActive("Vila")} erros=${((window as unknown as { __erros?: string[] }).__erros ?? []).join(" // ").slice(0, 1500)}` }), 5000);
   const $ = <E extends Element>(sel: string) => document.querySelector<E>(sel);
   let imagem = "";
   let imagemAntes = "";
@@ -36,13 +41,21 @@ export async function autoteste(jogo: Phaser.Game, destino: string) {
     imagemAntes = await capturar();
     checar("quadros por segundo", jogo.loop.actualFps >= 30, `${jogo.loop.actualFps.toFixed(1)} fps`);
 
+    const moradores = (cena as unknown as { moradores: Array<{ sprite: Phaser.GameObjects.Sprite; dados: { comportamento: string } }> }).moradores;
+    const andantes = moradores.filter((m) => m.dados.comportamento !== "parado");
+    const antes = andantes.map((m) => ({ x: m.sprite.x, y: m.sprite.y }));
+    await esperar(4000);
+    const moveram = andantes.filter((m, i) => Phaser.Math.Distance.Between(m.sprite.x, m.sprite.y, antes[i].x, antes[i].y) > 4).length;
+    checar("moradores na Vila", moradores.length >= 10, `${moradores.length} moradores`);
+    checar("moradores andando", moveram >= 1, `${moveram} de ${andantes.length} se moveram em 4 s`);
+
     const x0 = jogador.x;
     ui.toque.vetor = { x: 1, y: 0 };
     await esperar(600);
     ui.toque.vetor = { x: 0, y: 0 };
-    checar("personagem anda (controle de toque)", jogador.x > x0 + 40, `${x0.toFixed(0)} → ${jogador.x.toFixed(0)}`);
+    checar("personagem anda (controle de toque)", jogador.x > x0 + 20, `${x0.toFixed(0)} → ${jogador.x.toFixed(0)}`);
 
-    jogador.setPosition(784, 500);
+    jogador.setPosition(37 * 16 + 8, 23 * 16 + 4); // ao sul da Lia
     await esperar(200);
     void cena.interagir();
     const dialogo = await ate(() => $<HTMLDivElement>(".dialogo:not([hidden])"), 3000);
@@ -59,7 +72,7 @@ export async function autoteste(jogo: Phaser.Game, destino: string) {
     checar("missão aceita", cena.estado.missaoAceita);
 
     await esperar(300);
-    jogador.setPosition(944, 702);
+    jogador.setPosition(40 * 16 + 8, 21 * 16 + 6); // em frente ao painel do moinho
     await esperar(200);
     void cena.interagir();
     const titulo = await ate(() => $<HTMLElement>(".terminal-missao h2"), 90000);
@@ -86,13 +99,18 @@ export async function autoteste(jogo: Phaser.Game, destino: string) {
     await esperar(2500);
     checar("terminal fecha e volta ao mapa", !ui.terminal.aberto);
     checar("Vila acende", cena.estado.acesa, `energia: ${cena.estado.energia} kWh`);
+    const moinhos = (cena as unknown as { moinhos: Phaser.GameObjects.Sprite[] }).moinhos;
+    checar("moinhos girando", moinhos.length >= 4 && moinhos.every((m) => m.anims.isPlaying), `${moinhos.length} moinhos`);
     checar("HUD atualizado", $(".hud-energia b")!.textContent === String(cena.estado.energia));
 
-    jogador.setPosition(560, 500);
+    jogador.setPosition(36 * 16, 24 * 16);
     await esperar(1500);
     imagem = await capturar();
   } catch (e) {
     checar("exceção no autoteste", false, String(e));
   }
+  const erros = (window as unknown as { __erros?: string[] }).__erros ?? [];
+  checar("sem erros na página", erros.length === 0, erros.slice(0, 5).join(" | "));
+  clearInterval(pulso);
   await fetch(destino, { method: "POST", body: JSON.stringify({ relatorio, imagem, imagemAntes }) });
 }

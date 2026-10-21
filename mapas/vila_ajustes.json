@@ -1,0 +1,43 @@
+{
+ "_sobre": "Ajustes de level design sobre a cena do Sunnyside: tiles acrescentados e células liberadas ou bloqueadas.",
+ "tiles": [
+  {
+   "camada": "paths",
+   "x": 35,
+   "y": 28,
+   "tile": 808
+  },
+  {
+   "camada": "paths",
+   "x": 36,
+   "y": 28,
+   "tile": 808
+  },
+  {
+   "camada": "decoration_02",
+   "x": 6,
+   "y": 36,
+   "tile": 746
+  },
+  {
+   "camada": "decoration_02",
+   "x": 6,
+   "y": 37,
+   "tile": 810
+  },
+  {
+   "camada": "decoration_02",
+   "x": 6,
+   "y": 38,
+   "tile": 810
+  },
+  {
+   "camada": "decoration_02",
+   "x": 6,
+   "y": 39,
+   "tile": 874
+  }
+ ],
+ "livre": [],
+ "bloqueado": []
+}

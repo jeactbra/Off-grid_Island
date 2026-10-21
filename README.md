@@ -3,22 +3,25 @@
 Jogo web 2D para praticar Python, feito para calouros de Engenharia de Energias Renováveis.
 O design completo está em `../docs/Ilha_Off-Grid_Documento_de_Design.md`.
 
-## Estado atual: Fase 2 concluída (mundo 2D básico)
+## Estado atual: Fase 2 concluída, com arte definitiva da Vila
 
-O jogo já abre no navegador com a Vila explorável: o aluno anda pelo mapa, conversa com a técnica Lia,
-aceita a missão, usa o terminal do Gerador G1 (editor de código com Python de verdade) e, ao concluir,
-vê a Vila acender. A arte ainda é provisória, desenhada por código.
+O jogo já abre no navegador com a Vila explorável, no estilo Stardew/Pokémon (arte Sunnyside World):
+ilha de contorno orgânico, rio, pontes, planaltos com escadas, animais e 10 moradores (alguns parados
+fazendo algo, outros vagando ou seguindo rotas). O aluno conversa com a técnica Lia, aceita a missão,
+usa o painel do Moinho G1 (editor de código com Python de verdade) e, ao concluir, os moinhos voltam a
+girar e a Vila sai do escuro.
 
 | Pasta | O que tem |
 | --- | --- |
 | `motor/` | Jogo em Phaser 3 + TypeScript: cenas, texturas provisórias, interface (HUD, diálogo, terminal, toque) |
-| `mapas/` | Mapas no formato do Tiled (`.tmj`), gerados por `ferramentas/gerar_mapa_vila.py` |
+| `mapas/` | `vila.tmj` (formato do Tiled, gerado), `vila_jogo.json` (moradores, painel, portão) e `vila_ajustes.json` (pontes e escadas acrescentadas) |
+| `arte/sunnyside/` | Arte importada do pacote Sunnyside World: tilesets, sprites, personagens e `sprites.json` (ver `CREDITOS.md`) |
 | `python/ilha/` | Núcleo em Python: execução segura do código do aluno, tradução de erros, comparação de saídas, base dos desafios |
 | `python/conteudo/` | Uma subpasta por região, com os modelos de desafio (`desafios.py`) e os metadados (`regiao.toml`) |
 | `executor/` | Web Worker que roda o núcleo Python no navegador com Pyodide, e o cliente JS |
 | `laboratorio/` | Bancada de teste das missões (não é a tela do aluno) |
-| `ferramentas/` | Validação dos modelos, manifesto de arquivos Python e gerador de mapa |
-| `testes/` | Testes automáticos do núcleo Python (unittest, sem dependências) |
+| `ferramentas/` | Validação dos modelos, manifesto de arquivos Python e importador da arte (`importar_sunnyside.py`) |
+| `testes/` | Testes automáticos do núcleo Python e do mapa (unittest, sem dependências) |
 
 ## Como usar
 
@@ -36,7 +39,8 @@ npm run dev
 # o laboratório fica em http://localhost:5173/laboratorio/
 ```
 
-Controles: setas ou WASD para andar, **E** ou **Espaço** para interagir, **Esc** fecha o terminal.
+Controles: setas ou WASD para andar, **Shift** para correr, **E** ou **Espaço** para interagir,
+**Esc** fecha o terminal.
 No celular aparecem um joystick e o botão de ação. Parâmetros de URL úteis:
 `?toque=1` (força os controles de toque), `?debug=1` (tecla L acende a região), `?fisica=1` (mostra colisões).
 
@@ -55,6 +59,28 @@ python3 ferramentas/validar_conteudo.py
 
 O primeiro carregamento baixa o Pyodide (cerca de 10 MB) e pode levar alguns segundos;
 o jogo começa a carregá-lo enquanto o aluno explora o mapa.
+
+## Arte e mapa
+
+A arte vem do pacote [Sunnyside World](https://danieldiggle.itch.io/sunnyside), de Daniel Diggle,
+usado conforme a licença do autor (uso em projetos e redistribuição em cursos com o link da página).
+O pacote original fica fora do repositório (`../Art_package/`). Para reimportar depois de mudar
+`mapas/vila_jogo.json` ou `mapas/vila_ajustes.json`:
+
+```bash
+python3 ferramentas/importar_sunnyside.py ../Art_package/sunrise/Sunnyside_World_ASSET_PACK_V2.1.zip
+python3 -m unittest testes.test_mapa      # confere se tudo continua alcançável
+```
+
+O importador converte a cena de exemplo do pacote (projeto GameMaker) para o formato do Tiled,
+calcula a colisão (água, penhascos, casas, cercas e árvores bloqueiam; pontes e escadas liberam),
+monta os personagens por camadas (corpo + cabelo + ferramentas) e tira da cena os personagens
+desenhados, que viram moradores de verdade. O mapa gerado também abre no editor Tiled.
+
+Para mudar moradores, falas, rotas e objetos, edite `mapas/vila_jogo.json`. Cada morador tem
+`visual` (cabelo: shorthair, bowlhair, curlyhair, longhair, mophair, spikeyhair), `comportamento`
+(`parado`, `vagar` com `raio` em tiles, ou `rota` com pontos em tiles), `acao` quando parado
+(idle, watering, hammering, reeling, mining, axe, waiting, carry, casting, dig, doing) e `falas`.
 
 ## Como criar uma missão nova
 
@@ -83,6 +109,27 @@ Confira antes de commitar em uma máquina nova.
 ## Histórico
 
 Registro datado das decisões de projeto e das mudanças de código. Entradas mais recentes no topo.
+
+### 2026-10-20 — Arte definitiva da Vila (Sunnyside World) e moradores vivos
+
+- **Decisão:** visual no estilo Stardew/Pokémon com o pacote Sunnyside World (Daniel Diggle). O Ninja
+  Adventure (CC0) também foi avaliado; fica como reserva (tem sons e música CC0 para usar depois).
+- Novo importador `ferramentas/importar_sunnyside.py`: decodifica a cena do projeto GameMaker do pacote
+  (13 camadas, tiles espelhados/girados, floresta em tiles de 32 px), gera `mapas/vila.tmj`, a camada de
+  colisão, as animações de água e os sprites decorativos (419 objetos, 82 sprites animados).
+- Colisão definida por regras conferidas visualmente (água, penhascos, rio, casas, cercas e árvores
+  bloqueiam; pontes, cais e escadas liberam). Ajustes de level design em `mapas/vila_ajustes.json`:
+  ponte de tábuas ligando a rua principal à praça do moinho e escada descendo para a mina.
+- 10 moradores com personagens em camadas (6 cabelos, 13 ações): Lia (técnica), Rosa (horta),
+  Tito (pescador), Bruna (ferreira), Nico (criança que vaga), Seu Jair, Davi (rota pela rua principal),
+  Mara (pastora), Caio (lenhador) e Lu (mineira). Viram para o jogador e param para conversar.
+- A missão agora é no painel do Moinho G1: antes da missão, Vila no escuro e moinhos parados;
+  ao concluir, a câmera vai até o moinho, os 5 moinhos voltam a girar e a Vila clareia.
+- Portão trancado na ponte oeste: o planalto da fazenda (futuro Campo Solar) fica visível mas fechado.
+- Jogador com caminhada e corrida (Shift), balão de interação, tela de carregamento.
+- Testes: 7 testes novos do mapa (tudo alcançável a partir do início, portão de fato fecha a ponte,
+  visuais dos moradores existem); autoteste do jogo com 16 verificações, todas passando a ~60 fps.
+- Removido o gerador de mapa provisório (`ferramentas/gerar_mapa_vila.py`).
 
 ### 2026-10-20 — Fase 2: mundo 2D da Vila
 

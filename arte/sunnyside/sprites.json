@@ -1,0 +1,2159 @@
+{
+ "sprites": {
+  "beetroot_00": {
+   "arquivo": "sprites/beetroot_00.png",
+   "w": 5,
+   "h": 5,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    4,
+    4
+   ]
+  },
+  "cabbage_05": {
+   "arquivo": "sprites/cabbage_05.png",
+   "w": 12,
+   "h": 11,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    11,
+    10
+   ]
+  },
+  "cauliflower_05": {
+   "arquivo": "sprites/cauliflower_05.png",
+   "w": 12,
+   "h": 12,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    11,
+    11
+   ]
+  },
+  "chimneysmoke_01": {
+   "arquivo": "sprites/chimneysmoke_01.png",
+   "w": 15,
+   "h": 37,
+   "ox": 7,
+   "oy": 37,
+   "quadros": 30,
+   "fps": 10.0,
+   "base": [
+    0,
+    14,
+    36
+   ]
+  },
+  "chimneysmoke_02": {
+   "arquivo": "sprites/chimneysmoke_02.png",
+   "w": 10,
+   "h": 30,
+   "ox": 5,
+   "oy": 30,
+   "quadros": 30,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    29
+   ]
+  },
+  "chimneysmoke_03": {
+   "arquivo": "sprites/chimneysmoke_03.png",
+   "w": 18,
+   "h": 21,
+   "ox": 9,
+   "oy": 21,
+   "quadros": 30,
+   "fps": 10.0,
+   "base": [
+    0,
+    17,
+    20
+   ]
+  },
+  "chimneysmoke_04": {
+   "arquivo": "sprites/chimneysmoke_04.png",
+   "w": 20,
+   "h": 32,
+   "ox": 10,
+   "oy": 32,
+   "quadros": 30,
+   "fps": 10.0,
+   "base": [
+    0,
+    19,
+    31
+   ]
+  },
+  "chimneysmoke_05": {
+   "arquivo": "sprites/chimneysmoke_05.png",
+   "w": 24,
+   "h": 19,
+   "ox": 12,
+   "oy": 19,
+   "quadros": 30,
+   "fps": 10.0,
+   "base": [
+    0,
+    23,
+    18
+   ]
+  },
+  "egg": {
+   "arquivo": "sprites/egg.png",
+   "w": 10,
+   "h": 11,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    10
+   ]
+  },
+  "fish": {
+   "arquivo": "sprites/fish.png",
+   "w": 11,
+   "h": 11,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    10,
+    10
+   ]
+  },
+  "kale_05": {
+   "arquivo": "sprites/kale_05.png",
+   "w": 14,
+   "h": 11,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    13,
+    10
+   ]
+  },
+  "milk": {
+   "arquivo": "sprites/milk.png",
+   "w": 10,
+   "h": 12,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    11
+   ]
+  },
+  "parsnip_03": {
+   "arquivo": "sprites/parsnip_03.png",
+   "w": 8,
+   "h": 8,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    7,
+    7
+   ]
+  },
+  "pumpkin_05": {
+   "arquivo": "sprites/pumpkin_05.png",
+   "w": 12,
+   "h": 14,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    11,
+    13
+   ]
+  },
+  "rock": {
+   "arquivo": "sprites/rock.png",
+   "w": 10,
+   "h": 10,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    9
+   ]
+  },
+  "spr_deco_acron": {
+   "arquivo": "sprites/spr_deco_acron.png",
+   "w": 10,
+   "h": 9,
+   "ox": 5,
+   "oy": 4,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    8
+   ]
+  },
+  "spr_deco_anvil": {
+   "arquivo": "sprites/spr_deco_anvil.png",
+   "w": 22,
+   "h": 16,
+   "ox": 11,
+   "oy": 8,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    21,
+    15
+   ]
+  },
+  "spr_deco_barrel_closed": {
+   "arquivo": "sprites/spr_deco_barrel_closed.png",
+   "w": 13,
+   "h": 16,
+   "ox": 6,
+   "oy": 8,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    12,
+    15
+   ]
+  },
+  "spr_deco_barrel_open": {
+   "arquivo": "sprites/spr_deco_barrel_open.png",
+   "w": 13,
+   "h": 16,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    12,
+    15
+   ]
+  },
+  "spr_deco_barrel_swords": {
+   "arquivo": "sprites/spr_deco_barrel_swords.png",
+   "w": 13,
+   "h": 20,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    12,
+    19
+   ]
+  },
+  "spr_deco_barrel_water": {
+   "arquivo": "sprites/spr_deco_barrel_water.png",
+   "w": 13,
+   "h": 16,
+   "ox": 6,
+   "oy": 8,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    12,
+    15
+   ]
+  },
+  "spr_deco_beam": {
+   "arquivo": "sprites/spr_deco_beam.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 8,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    5,
+    10,
+    15
+   ]
+  },
+  "spr_deco_bird_01": {
+   "arquivo": "sprites/spr_deco_bird_01.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 16,
+   "quadros": 4,
+   "fps": 8.0,
+   "base": [
+    1,
+    15,
+    15
+   ]
+  },
+  "spr_deco_blinking": {
+   "arquivo": "sprites/spr_deco_blinking.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 8,
+   "quadros": 12,
+   "fps": 10.0,
+   "base": [
+    0,
+    11,
+    10
+   ]
+  },
+  "spr_deco_book_01": {
+   "arquivo": "sprites/spr_deco_book_01.png",
+   "w": 7,
+   "h": 8,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    6,
+    7
+   ]
+  },
+  "spr_deco_book_02": {
+   "arquivo": "sprites/spr_deco_book_02.png",
+   "w": 5,
+   "h": 9,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    4,
+    8
+   ]
+  },
+  "spr_deco_bucket": {
+   "arquivo": "sprites/spr_deco_bucket.png",
+   "w": 10,
+   "h": 11,
+   "ox": 5,
+   "oy": 5,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    10
+   ]
+  },
+  "spr_deco_campfire": {
+   "arquivo": "sprites/spr_deco_campfire.png",
+   "w": 23,
+   "h": 20,
+   "ox": 11,
+   "oy": 10,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    22,
+    19
+   ]
+  },
+  "spr_deco_chair_01": {
+   "arquivo": "sprites/spr_deco_chair_01.png",
+   "w": 10,
+   "h": 14,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    13
+   ]
+  },
+  "spr_deco_charactershadow": {
+   "arquivo": "sprites/spr_deco_charactershadow.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 8,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    1,
+    14,
+    11
+   ]
+  },
+  "spr_deco_chest_01_open": {
+   "arquivo": "sprites/spr_deco_chest_01_open.png",
+   "w": 16,
+   "h": 25,
+   "ox": 8,
+   "oy": 12,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    15,
+    24
+   ]
+  },
+  "spr_deco_chest_02_closed": {
+   "arquivo": "sprites/spr_deco_chest_02_closed.png",
+   "w": 16,
+   "h": 21,
+   "ox": 8,
+   "oy": 10,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    15,
+    20
+   ]
+  },
+  "spr_deco_chicken_01": {
+   "arquivo": "sprites/spr_deco_chicken_01.png",
+   "w": 32,
+   "h": 32,
+   "ox": 16,
+   "oy": 23,
+   "quadros": 4,
+   "fps": 10.0,
+   "base": [
+    7,
+    22,
+    25
+   ]
+  },
+  "spr_deco_chinmney": {
+   "arquivo": "sprites/spr_deco_chinmney.png",
+   "w": 11,
+   "h": 37,
+   "ox": 5,
+   "oy": 37,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    10,
+    36
+   ]
+  },
+  "spr_deco_coin": {
+   "arquivo": "sprites/spr_deco_coin.png",
+   "w": 8,
+   "h": 7,
+   "ox": 4,
+   "oy": 3,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    7,
+    6
+   ]
+  },
+  "spr_deco_coins": {
+   "arquivo": "sprites/spr_deco_coins.png",
+   "w": 16,
+   "h": 11,
+   "ox": 8,
+   "oy": 5,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    15,
+    10
+   ]
+  },
+  "spr_deco_cook_chinmney": {
+   "arquivo": "sprites/spr_deco_cook_chinmney.png",
+   "w": 27,
+   "h": 37,
+   "ox": 13,
+   "oy": 37,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    21,
+    36
+   ]
+  },
+  "spr_deco_coracle": {
+   "arquivo": "sprites/spr_deco_coracle.png",
+   "w": 48,
+   "h": 37,
+   "ox": 24,
+   "oy": 18,
+   "quadros": 4,
+   "fps": 5.0,
+   "base": [
+    3,
+    39,
+    35
+   ]
+  },
+  "spr_deco_coracle_land": {
+   "arquivo": "sprites/spr_deco_coracle_land.png",
+   "w": 32,
+   "h": 30,
+   "ox": 16,
+   "oy": 15,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    31,
+    29
+   ]
+  },
+  "spr_deco_cow": {
+   "arquivo": "sprites/spr_deco_cow.png",
+   "w": 32,
+   "h": 32,
+   "ox": 16,
+   "oy": 23,
+   "quadros": 4,
+   "fps": 10.0,
+   "base": [
+    4,
+    27,
+    28
+   ]
+  },
+  "spr_deco_crate_01": {
+   "arquivo": "sprites/spr_deco_crate_01.png",
+   "w": 16,
+   "h": 21,
+   "ox": 8,
+   "oy": 21,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    15,
+    20
+   ]
+  },
+  "spr_deco_crate_02": {
+   "arquivo": "sprites/spr_deco_crate_02.png",
+   "w": 16,
+   "h": 21,
+   "ox": 8,
+   "oy": 21,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    15,
+    20
+   ]
+  },
+  "spr_deco_duck_01": {
+   "arquivo": "sprites/spr_deco_duck_01.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 8,
+   "quadros": 4,
+   "fps": 4.0,
+   "base": [
+    0,
+    15,
+    15
+   ]
+  },
+  "spr_deco_fire_01": {
+   "arquivo": "sprites/spr_deco_fire_01.png",
+   "w": 5,
+   "h": 10,
+   "ox": 2,
+   "oy": 10,
+   "quadros": 4,
+   "fps": 10.0,
+   "base": [
+    0,
+    4,
+    9
+   ]
+  },
+  "spr_deco_fire_02": {
+   "arquivo": "sprites/spr_deco_fire_02.png",
+   "w": 8,
+   "h": 12,
+   "ox": 4,
+   "oy": 12,
+   "quadros": 4,
+   "fps": 10.0,
+   "base": [
+    0,
+    7,
+    11
+   ]
+  },
+  "spr_deco_firepit": {
+   "arquivo": "sprites/spr_deco_firepit.png",
+   "w": 14,
+   "h": 17,
+   "ox": 7,
+   "oy": 17,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    13,
+    16
+   ]
+  },
+  "spr_deco_flowers_house_01": {
+   "arquivo": "sprites/spr_deco_flowers_house_01.png",
+   "w": 8,
+   "h": 18,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    7,
+    17
+   ]
+  },
+  "spr_deco_flowers_house_02": {
+   "arquivo": "sprites/spr_deco_flowers_house_02.png",
+   "w": 12,
+   "h": 19,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    11,
+    18
+   ]
+  },
+  "spr_deco_glint_01": {
+   "arquivo": "sprites/spr_deco_glint_01.png",
+   "w": 7,
+   "h": 7,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 6,
+   "fps": 4.0,
+   "base": [
+    0,
+    6,
+    6
+   ]
+  },
+  "spr_deco_glint_02": {
+   "arquivo": "sprites/spr_deco_glint_02.png",
+   "w": 7,
+   "h": 7,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 4,
+   "fps": 5.0,
+   "base": [
+    0,
+    6,
+    6
+   ]
+  },
+  "spr_deco_jar_01": {
+   "arquivo": "sprites/spr_deco_jar_01.png",
+   "w": 10,
+   "h": 12,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    11
+   ]
+  },
+  "spr_deco_jar_02": {
+   "arquivo": "sprites/spr_deco_jar_02.png",
+   "w": 10,
+   "h": 13,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    12
+   ]
+  },
+  "spr_deco_minecart": {
+   "arquivo": "sprites/spr_deco_minecart.png",
+   "w": 14,
+   "h": 23,
+   "ox": 7,
+   "oy": 11,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    13,
+    22
+   ]
+  },
+  "spr_deco_mug_01": {
+   "arquivo": "sprites/spr_deco_mug_01.png",
+   "w": 5,
+   "h": 9,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    4,
+    8
+   ]
+  },
+  "spr_deco_mug_02": {
+   "arquivo": "sprites/spr_deco_mug_02.png",
+   "w": 7,
+   "h": 8,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    6,
+    7
+   ]
+  },
+  "spr_deco_mushroom_blue_01": {
+   "arquivo": "sprites/spr_deco_mushroom_blue_01.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 16,
+   "quadros": 4,
+   "fps": 4.0,
+   "base": [
+    1,
+    10,
+    15
+   ]
+  },
+  "spr_deco_mushroom_blue_02": {
+   "arquivo": "sprites/spr_deco_mushroom_blue_02.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 16,
+   "quadros": 4,
+   "fps": 4.0,
+   "base": [
+    0,
+    15,
+    15
+   ]
+  },
+  "spr_deco_mushroom_blue_03": {
+   "arquivo": "sprites/spr_deco_mushroom_blue_03.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 8,
+   "quadros": 4,
+   "fps": 4.0,
+   "base": [
+    8,
+    14,
+    13
+   ]
+  },
+  "spr_deco_mushroom_red_01": {
+   "arquivo": "sprites/spr_deco_mushroom_red_01.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 8,
+   "quadros": 4,
+   "fps": 4.0,
+   "base": [
+    5,
+    14,
+    13
+   ]
+  },
+  "spr_deco_oar": {
+   "arquivo": "sprites/spr_deco_oar.png",
+   "w": 16,
+   "h": 12,
+   "ox": 8,
+   "oy": 6,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    14,
+    11
+   ]
+  },
+  "spr_deco_ore_coal": {
+   "arquivo": "sprites/spr_deco_ore_coal.png",
+   "w": 10,
+   "h": 10,
+   "ox": 5,
+   "oy": 5,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    9
+   ]
+  },
+  "spr_deco_ore_gold": {
+   "arquivo": "sprites/spr_deco_ore_gold.png",
+   "w": 10,
+   "h": 10,
+   "ox": 5,
+   "oy": 5,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    9
+   ]
+  },
+  "spr_deco_pig_01": {
+   "arquivo": "sprites/spr_deco_pig_01.png",
+   "w": 32,
+   "h": 32,
+   "ox": 16,
+   "oy": 16,
+   "quadros": 4,
+   "fps": 10.0,
+   "base": [
+    7,
+    24,
+    26
+   ]
+  },
+  "spr_deco_plate_food": {
+   "arquivo": "sprites/spr_deco_plate_food.png",
+   "w": 7,
+   "h": 8,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    6,
+    7
+   ]
+  },
+  "spr_deco_plate_knifeandfork": {
+   "arquivo": "sprites/spr_deco_plate_knifeandfork.png",
+   "w": 7,
+   "h": 13,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    6,
+    12
+   ]
+  },
+  "spr_deco_shadow": {
+   "arquivo": "sprites/spr_deco_shadow.png",
+   "w": 16,
+   "h": 16,
+   "ox": 8,
+   "oy": 8,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    1,
+    14,
+    12
+   ]
+  },
+  "spr_deco_sheep_01": {
+   "arquivo": "sprites/spr_deco_sheep_01.png",
+   "w": 32,
+   "h": 32,
+   "ox": 16,
+   "oy": 24,
+   "quadros": 4,
+   "fps": 8.0,
+   "base": [
+    7,
+    24,
+    26
+   ]
+  },
+  "spr_deco_sidetable_01": {
+   "arquivo": "sprites/spr_deco_sidetable_01.png",
+   "w": 12,
+   "h": 26,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    11,
+    25
+   ]
+  },
+  "spr_deco_sword_floor": {
+   "arquivo": "sprites/spr_deco_sword_floor.png",
+   "w": 10,
+   "h": 11,
+   "ox": 5,
+   "oy": 5,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    10
+   ]
+  },
+  "spr_deco_tree_01": {
+   "arquivo": "sprites/spr_deco_tree_01.png",
+   "w": 32,
+   "h": 34,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 4,
+   "fps": 4.0,
+   "base": [
+    3,
+    28,
+    33
+   ]
+  },
+  "spr_deco_tree_02": {
+   "arquivo": "sprites/spr_deco_tree_02.png",
+   "w": 28,
+   "h": 43,
+   "ox": 14,
+   "oy": 43,
+   "quadros": 4,
+   "fps": 4.0,
+   "base": [
+    5,
+    22,
+    39
+   ]
+  },
+  "spr_deco_trough": {
+   "arquivo": "sprites/spr_deco_trough.png",
+   "w": 29,
+   "h": 16,
+   "ox": 14,
+   "oy": 8,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    28,
+    15
+   ]
+  },
+  "spr_deco_truffle": {
+   "arquivo": "sprites/spr_deco_truffle.png",
+   "w": 10,
+   "h": 10,
+   "ox": 5,
+   "oy": 5,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    9
+   ]
+  },
+  "spr_deco_waterbowl": {
+   "arquivo": "sprites/spr_deco_waterbowl.png",
+   "w": 8,
+   "h": 11,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    7,
+    10
+   ]
+  },
+  "spr_deco_well": {
+   "arquivo": "sprites/spr_deco_well.png",
+   "w": 20,
+   "h": 25,
+   "ox": 10,
+   "oy": 12,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    19,
+    24
+   ]
+  },
+  "spr_deco_well_covered": {
+   "arquivo": "sprites/spr_deco_well_covered.png",
+   "w": 20,
+   "h": 40,
+   "ox": 0,
+   "oy": 40,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    19,
+    39
+   ]
+  },
+  "spr_deco_windmill": {
+   "arquivo": "sprites/spr_deco_windmill.png",
+   "w": 112,
+   "h": 112,
+   "ox": 56,
+   "oy": 56,
+   "quadros": 9,
+   "fps": 10.0,
+   "base": [
+    7,
+    103,
+    104
+   ]
+  },
+  "spr_deco_windmill_withshadow": {
+   "arquivo": "sprites/spr_deco_windmill_withshadow.png",
+   "w": 112,
+   "h": 112,
+   "ox": 56,
+   "oy": 56,
+   "quadros": 9,
+   "fps": 6.0,
+   "base": [
+    7,
+    103,
+    110
+   ]
+  },
+  "spr_deco_windmillshadow": {
+   "arquivo": "sprites/spr_deco_windmillshadow.png",
+   "w": 112,
+   "h": 112,
+   "ox": 56,
+   "oy": 56,
+   "quadros": 9,
+   "fps": 10.0,
+   "base": [
+    7,
+    103,
+    104
+   ]
+  },
+  "spr_deco_wool": {
+   "arquivo": "sprites/spr_deco_wool.png",
+   "w": 10,
+   "h": 10,
+   "ox": 5,
+   "oy": 5,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    9,
+    9
+   ]
+  },
+  "wheat_01": {
+   "arquivo": "sprites/wheat_01.png",
+   "w": 11,
+   "h": 7,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    10,
+    6
+   ]
+  },
+  "wood": {
+   "arquivo": "sprites/wood.png",
+   "w": 11,
+   "h": 11,
+   "ox": 0,
+   "oy": 0,
+   "quadros": 1,
+   "fps": 10.0,
+   "base": [
+    0,
+    10,
+    10
+   ]
+  }
+ },
+ "personagens": {
+  "shorthair_idle": {
+   "arquivo": "personagens/shorthair_idle.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 8,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_idle": {
+   "arquivo": "personagens/bowlhair_idle.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 8,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_idle": {
+   "arquivo": "personagens/curlyhair_idle.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 8,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_idle": {
+   "arquivo": "personagens/longhair_idle.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 8,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_idle": {
+   "arquivo": "personagens/mophair_idle.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 8,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_idle": {
+   "arquivo": "personagens/spikeyhair_idle.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 8,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_walk": {
+   "arquivo": "personagens/shorthair_walk.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_walk": {
+   "arquivo": "personagens/bowlhair_walk.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_walk": {
+   "arquivo": "personagens/curlyhair_walk.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_walk": {
+   "arquivo": "personagens/longhair_walk.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_walk": {
+   "arquivo": "personagens/mophair_walk.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_walk": {
+   "arquivo": "personagens/spikeyhair_walk.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_run": {
+   "arquivo": "personagens/shorthair_run.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 12,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_run": {
+   "arquivo": "personagens/bowlhair_run.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 12,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_run": {
+   "arquivo": "personagens/curlyhair_run.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 12,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_run": {
+   "arquivo": "personagens/longhair_run.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 12,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_run": {
+   "arquivo": "personagens/mophair_run.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 12,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_run": {
+   "arquivo": "personagens/spikeyhair_run.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 12,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_watering": {
+   "arquivo": "personagens/shorthair_watering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 5,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_watering": {
+   "arquivo": "personagens/bowlhair_watering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 5,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_watering": {
+   "arquivo": "personagens/curlyhair_watering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 5,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_watering": {
+   "arquivo": "personagens/longhair_watering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 5,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_watering": {
+   "arquivo": "personagens/mophair_watering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 5,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_watering": {
+   "arquivo": "personagens/spikeyhair_watering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 5,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_hammering": {
+   "arquivo": "personagens/shorthair_hammering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 23,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_hammering": {
+   "arquivo": "personagens/bowlhair_hammering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 23,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_hammering": {
+   "arquivo": "personagens/curlyhair_hammering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 23,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_hammering": {
+   "arquivo": "personagens/longhair_hammering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 23,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_hammering": {
+   "arquivo": "personagens/mophair_hammering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 23,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_hammering": {
+   "arquivo": "personagens/spikeyhair_hammering.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 23,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_doing": {
+   "arquivo": "personagens/shorthair_doing.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_doing": {
+   "arquivo": "personagens/bowlhair_doing.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_doing": {
+   "arquivo": "personagens/curlyhair_doing.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_doing": {
+   "arquivo": "personagens/longhair_doing.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_doing": {
+   "arquivo": "personagens/mophair_doing.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_doing": {
+   "arquivo": "personagens/spikeyhair_doing.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_carry": {
+   "arquivo": "personagens/shorthair_carry.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_carry": {
+   "arquivo": "personagens/bowlhair_carry.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_carry": {
+   "arquivo": "personagens/curlyhair_carry.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_carry": {
+   "arquivo": "personagens/longhair_carry.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_carry": {
+   "arquivo": "personagens/mophair_carry.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_carry": {
+   "arquivo": "personagens/spikeyhair_carry.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 8,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_casting": {
+   "arquivo": "personagens/shorthair_casting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 15,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_casting": {
+   "arquivo": "personagens/bowlhair_casting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 15,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_casting": {
+   "arquivo": "personagens/curlyhair_casting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 15,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_casting": {
+   "arquivo": "personagens/longhair_casting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 15,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_casting": {
+   "arquivo": "personagens/mophair_casting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 15,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_casting": {
+   "arquivo": "personagens/spikeyhair_casting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 15,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_waiting": {
+   "arquivo": "personagens/shorthair_waiting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_waiting": {
+   "arquivo": "personagens/bowlhair_waiting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_waiting": {
+   "arquivo": "personagens/curlyhair_waiting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_waiting": {
+   "arquivo": "personagens/longhair_waiting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_waiting": {
+   "arquivo": "personagens/mophair_waiting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_waiting": {
+   "arquivo": "personagens/spikeyhair_waiting.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 9,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_mining": {
+   "arquivo": "personagens/shorthair_mining.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_mining": {
+   "arquivo": "personagens/bowlhair_mining.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_mining": {
+   "arquivo": "personagens/curlyhair_mining.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_mining": {
+   "arquivo": "personagens/longhair_mining.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_mining": {
+   "arquivo": "personagens/mophair_mining.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_mining": {
+   "arquivo": "personagens/spikeyhair_mining.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_axe": {
+   "arquivo": "personagens/shorthair_axe.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_axe": {
+   "arquivo": "personagens/bowlhair_axe.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_axe": {
+   "arquivo": "personagens/curlyhair_axe.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_axe": {
+   "arquivo": "personagens/longhair_axe.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_axe": {
+   "arquivo": "personagens/mophair_axe.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_axe": {
+   "arquivo": "personagens/spikeyhair_axe.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 10,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_dig": {
+   "arquivo": "personagens/shorthair_dig.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_dig": {
+   "arquivo": "personagens/bowlhair_dig.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_dig": {
+   "arquivo": "personagens/curlyhair_dig.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_dig": {
+   "arquivo": "personagens/longhair_dig.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_dig": {
+   "arquivo": "personagens/mophair_dig.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_dig": {
+   "arquivo": "personagens/spikeyhair_dig.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "shorthair_reeling": {
+   "arquivo": "personagens/shorthair_reeling.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "bowlhair_reeling": {
+   "arquivo": "personagens/bowlhair_reeling.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "curlyhair_reeling": {
+   "arquivo": "personagens/curlyhair_reeling.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "longhair_reeling": {
+   "arquivo": "personagens/longhair_reeling.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "mophair_reeling": {
+   "arquivo": "personagens/mophair_reeling.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  },
+  "spikeyhair_reeling": {
+   "arquivo": "personagens/spikeyhair_reeling.png",
+   "w": 96,
+   "h": 64,
+   "quadros": 13,
+   "fps": 10,
+   "ox": 48,
+   "oy": 38
+  }
+ },
+ "animacoes_tiles": {
+  "147": {
+   "quadros": [
+    147,
+    147,
+    147,
+    147,
+    150,
+    150,
+    150,
+    150
+   ],
+   "fps": 5.0
+  },
+  "148": {
+   "quadros": [
+    148,
+    148,
+    148,
+    148,
+    151,
+    151,
+    151,
+    151
+   ],
+   "fps": 5.0
+  },
+  "149": {
+   "quadros": [
+    149,
+    149,
+    149,
+    149,
+    152,
+    152,
+    152,
+    152
+   ],
+   "fps": 5.0
+  },
+  "211": {
+   "quadros": [
+    211,
+    211,
+    211,
+    211,
+    214,
+    214,
+    214,
+    214
+   ],
+   "fps": 5.0
+  },
+  "213": {
+   "quadros": [
+    213,
+    213,
+    213,
+    213,
+    216,
+    216,
+    216,
+    216
+   ],
+   "fps": 5.0
+  },
+  "275": {
+   "quadros": [
+    275,
+    275,
+    275,
+    275,
+    278,
+    278,
+    278,
+    278
+   ],
+   "fps": 5.0
+  },
+  "276": {
+   "quadros": [
+    276,
+    276,
+    276,
+    276,
+    279,
+    279,
+    279,
+    279
+   ],
+   "fps": 5.0
+  },
+  "277": {
+   "quadros": [
+    277,
+    277,
+    277,
+    277,
+    280,
+    280,
+    280,
+    280
+   ],
+   "fps": 5.0
+  },
+  "340": {
+   "quadros": [
+    340,
+    340,
+    340,
+    340,
+    343,
+    343,
+    343,
+    343
+   ],
+   "fps": 5.0
+  },
+  "339": {
+   "quadros": [
+    339,
+    339,
+    339,
+    339,
+    342,
+    342,
+    342,
+    342
+   ],
+   "fps": 5.0
+  },
+  "341": {
+   "quadros": [
+    341,
+    341,
+    341,
+    341,
+    344,
+    344,
+    344,
+    344
+   ],
+   "fps": 5.0
+  },
+  "403": {
+   "quadros": [
+    403,
+    403,
+    403,
+    403,
+    406,
+    406,
+    406,
+    406
+   ],
+   "fps": 5.0
+  },
+  "405": {
+   "quadros": [
+    405,
+    405,
+    405,
+    405,
+    408,
+    408,
+    408,
+    408
+   ],
+   "fps": 5.0
+  },
+  "478": {
+   "quadros": [
+    478,
+    479,
+    480,
+    481
+   ],
+   "fps": 5.0
+  },
+  "212": {
+   "quadros": [
+    212,
+    212,
+    212,
+    212,
+    215,
+    215,
+    215,
+    215
+   ],
+   "fps": 5.0
+  },
+  "153": {
+   "quadros": [
+    153,
+    153,
+    153,
+    153,
+    217,
+    217,
+    217,
+    217
+   ],
+   "fps": 5.0
+  },
+  "414": {
+   "quadros": [
+    414,
+    415,
+    416,
+    417
+   ],
+   "fps": 5.0
+  },
+  "91": {
+   "quadros": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "fps": 5.0
+  },
+  "155": {
+   "quadros": [
+    155,
+    156,
+    157,
+    158
+   ],
+   "fps": 5.0
+  },
+  "219": {
+   "quadros": [
+    219,
+    220,
+    221,
+    222
+   ],
+   "fps": 5.0
+  },
+  "283": {
+   "quadros": [
+    283,
+    284,
+    285,
+    286
+   ],
+   "fps": 5.0
+  },
+  "410": {
+   "quadros": [
+    410,
+    411,
+    412,
+    413
+   ],
+   "fps": 5.0
+  },
+  "542": {
+   "quadros": [
+    542,
+    543,
+    544,
+    545
+   ],
+   "fps": 5.0
+  },
+  "1276": {
+   "quadros": [
+    1276,
+    1276,
+    1276,
+    1276,
+    1277,
+    1277,
+    1277,
+    1277
+   ],
+   "fps": 5.0
+  },
+  "1419": {
+   "quadros": [
+    1419,
+    1419,
+    1419,
+    1419,
+    1420,
+    1420,
+    1420,
+    1420,
+    1421,
+    1421,
+    1421,
+    1421,
+    1422,
+    1422,
+    1422,
+    1422
+   ],
+   "fps": 5.0
+  }
+ }
+}

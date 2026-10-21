@@ -45,11 +45,28 @@ export class Interface {
   dialogo: Dialogo;
   terminal: Terminal;
   toque: ControleToque;
+  private balao: HTMLDivElement;
 
   constructor(container: HTMLElement, executor: ExecutorPython) {
+    this.balao = document.createElement("div");
+    this.balao.className = "aviso";
+    this.balao.hidden = true;
+    container.appendChild(this.balao);
     this.hud = new Hud(container);
     this.toque = new ControleToque(container);
     this.dialogo = new Dialogo(container);
     this.terminal = new Terminal(container, executor);
+  }
+
+  /** Balão "E · Falar com…" sobre o jogador (posição em pixels da tela). */
+  aviso(texto: string | null, x = 0, y = 0, comTecla = true) {
+    if (texto === null) {
+      this.balao.hidden = true;
+      return;
+    }
+    const conteudo = comTecla ? `<kbd>E</kbd> ${texto}` : texto;
+    if (this.balao.innerHTML !== conteudo) this.balao.innerHTML = conteudo;
+    this.balao.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px) translate(-50%, -100%)`;
+    this.balao.hidden = false;
   }
 }

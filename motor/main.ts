@@ -5,6 +5,12 @@ import { Vila } from "./cenas/Vila";
 import { Interface } from "./ui/interface";
 import "./estilo.css";
 
+// erros guardados para o autoteste e para depuração
+const erros: string[] = [];
+(window as unknown as { __erros: string[] }).__erros = erros;
+window.addEventListener("error", (e) => erros.push(`${e.message} @ ${e.filename}:${e.lineno}\n${e.error?.stack ?? ""}`));
+window.addEventListener("unhandledrejection", (e) => erros.push(`promessa: ${e.reason}`));
+
 // O Python começa a carregar já na abertura, enquanto o aluno explora.
 const executor = new ExecutorPython();
 const camadaUi = document.getElementById("interface")!;

@@ -1,0 +1,211 @@
+[
+ {
+  "name": "jogador",
+  "type": "inicio",
+  "x": 344,
+  "y": 504,
+  "props": {}
+ },
+ {
+  "name": "terminal_moinho",
+  "type": "terminal",
+  "x": 648,
+  "y": 328,
+  "props": {
+   "missao": "vila_programa_status",
+   "rotulo": "Painel do Moinho G1",
+   "equipamento": "Moinho G1"
+  }
+ },
+ {
+  "name": "quadro_avisos",
+  "type": "quadro",
+  "x": 568,
+  "y": 472,
+  "props": {}
+ },
+ {
+  "name": "portao_campo_solar",
+  "type": "portao",
+  "x": 120,
+  "y": 280,
+  "props": {
+   "destino": "Campo Solar"
+  }
+ },
+ {
+  "name": "lia",
+  "type": "npc",
+  "x": 600,
+  "y": 360,
+  "props": {
+   "rotulo": "Lia",
+   "funcao": "Técnica da Vila",
+   "visual": "longhair",
+   "comportamento": "parado",
+   "acao": "idle",
+   "missao": "sim"
+  }
+ },
+ {
+  "name": "rosa",
+  "type": "npc",
+  "x": 840,
+  "y": 88,
+  "props": {
+   "rotulo": "Rosa",
+   "visual": "curlyhair",
+   "comportamento": "parado",
+   "acao": "watering",
+   "falas": [
+    "As plantas também precisam de energia: sol, água e paciência.",
+    "Quando a bomba d'água voltar a funcionar, regar vai ser bem mais fácil!"
+   ]
+  }
+ },
+ {
+  "name": "tito",
+  "type": "npc",
+  "x": 472,
+  "y": 696,
+  "props": {
+   "rotulo": "Tito",
+   "visual": "bowlhair",
+   "comportamento": "parado",
+   "acao": "reeling",
+   "falas": [
+    "Shh... os peixes ouvem tudo.",
+    "Antigamente o cais tinha luz a noite inteira. Saudade."
+   ]
+  }
+ },
+ {
+  "name": "bruna",
+  "type": "npc",
+  "x": 984,
+  "y": 472,
+  "props": {
+   "rotulo": "Bruna",
+   "visual": "spikeyhair",
+   "comportamento": "parado",
+   "acao": "hammering",
+   "falas": [
+    "Uma peça de cada vez, na ordem certa. Igual a programar, né?",
+    "Esse martelo já consertou metade dos moinhos da ilha."
+   ]
+  }
+ },
+ {
+  "name": "nico",
+  "type": "npc",
+  "x": 488,
+  "y": 504,
+  "props": {
+   "rotulo": "Nico",
+   "visual": "mophair",
+   "comportamento": "vagar",
+   "raio": 4,
+   "falas": [
+    "Você é quem vai ligar a luz? Eu quero ver o moinho girar!",
+    "Eu sei contar até mil! Mas o computador conta mais rápido."
+   ]
+  }
+ },
+ {
+  "name": "seu_jair",
+  "type": "npc",
+  "x": 424,
+  "y": 392,
+  "props": {
+   "rotulo": "Seu Jair",
+   "visual": "shorthair",
+   "comportamento": "parado",
+   "acao": "waiting",
+   "falas": [
+    "No meu tempo, a ilha toda era iluminada pelo vento.",
+    "O computador faz exatamente o que você manda. Nem mais, nem menos."
+   ]
+  }
+ },
+ {
+  "name": "davi",
+  "type": "npc",
+  "x": 312,
+  "y": 504,
+  "props": {
+   "rotulo": "Davi",
+   "visual": "spikeyhair",
+   "comportamento": "rota",
+   "rota": [
+    [
+     19,
+     31
+    ],
+    [
+     44,
+     30
+    ],
+    [
+     66,
+     30
+    ],
+    [
+     44,
+     31
+    ]
+   ],
+   "falas": [
+    "Estou levando recados de um lado a outro da Vila.",
+    "Dizem que tem um baú escondido perto do cais..."
+   ]
+  }
+ },
+ {
+  "name": "mara",
+  "type": "npc",
+  "x": 872,
+  "y": 168,
+  "props": {
+   "rotulo": "Mara",
+   "visual": "longhair",
+   "comportamento": "vagar",
+   "raio": 3,
+   "falas": [
+    "As ovelhas não ligam para energia. Eu ligo!",
+    "Já viu o moinho grande girando? É lindo."
+   ]
+  }
+ },
+ {
+  "name": "caio",
+  "type": "npc",
+  "x": 136,
+  "y": 536,
+  "props": {
+   "rotulo": "Caio",
+   "visual": "bowlhair",
+   "comportamento": "parado",
+   "acao": "axe",
+   "falas": [
+    "Madeira para as cercas da horta.",
+    "Lenha queima rápido. O vento não acaba nunca."
+   ]
+  }
+ },
+ {
+  "name": "lu",
+  "type": "npc",
+  "x": 136,
+  "y": 712,
+  "props": {
+   "rotulo": "Lu",
+   "visual": "curlyhair",
+   "comportamento": "parado",
+   "acao": "mining",
+   "falas": [
+    "Cobre para os fios novos da Vila!",
+    "Cada fio leva energia de um lugar para outro."
+   ]
+  }
+ }
+]
