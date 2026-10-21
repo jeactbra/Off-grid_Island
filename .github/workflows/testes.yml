@@ -3,7 +3,7 @@ name: testes
 on: [push, pull_request]
 
 jobs:
-  testes:
+  python:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,7 +14,20 @@ jobs:
         run: python -m unittest discover -s testes -t .
       - name: Validação do conteúdo
         run: python ferramentas/validar_conteudo.py --sementes 500
-      - name: Manifesto atualizado
+      - name: Manifesto e mapa atualizados
         run: |
           python ferramentas/gerar_manifesto.py
-          git diff --exit-code python/arquivos.json
+          python ferramentas/gerar_mapa_vila.py
+          git diff --exit-code python/arquivos.json mapas/
+
+  jogo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - name: Tipos e build
+        run: npm run build

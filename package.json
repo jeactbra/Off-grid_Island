@@ -1,0 +1,24 @@
+{
+  "name": "ilha-off-grid",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tipos": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@codemirror/commands": "6.11.1",
+    "@codemirror/lang-python": "6.1.6",
+    "@codemirror/theme-one-dark": "6.1.2",
+    "@codemirror/view": "6.43.15",
+    "codemirror": "6.0.1",
+    "phaser": "3.87.0"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}
