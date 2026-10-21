@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laboratório de Missões</title>
+<style>
+  :root {
+    --fundo: #f6f7f4; --painel: #ffffff; --texto: #1d2420; --suave: #5d6a62;
+    --borda: #d8ddd6; --acento: #1f8a5b; --acento-texto: #ffffff;
+    --erro: #b3261e; --erro-fundo: #fdecea; --ok-fundo: #e6f4ec; --codigo: #f0f2ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fundo: #121614; --painel: #1b201d; --texto: #e6ebe7; --suave: #9aa79f;
+      --borda: #2e3631; --acento: #3fbf84; --acento-texto: #0b1410;
+      --erro: #ff8a80; --erro-fundo: #3a1d1b; --ok-fundo: #173326; --codigo: #232a26;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fundo); color: var(--texto);
+         font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--suave); margin: 0 0 20px; }
+  .barra { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin-bottom: 16px; }
+  label { display: grid; gap: 4px; font-size: 13px; color: var(--suave); }
+  select, input, textarea, button { font: inherit; color: inherit; }
+  select, input { background: var(--painel); border: 1px solid var(--borda); border-radius: 8px; padding: 8px 10px; }
+  .painel { background: var(--painel); border: 1px solid var(--borda); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  .painel h2 { font-size: 17px; margin: 0 0 4px; }
+  .etiqueta { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 99px;
+              background: var(--codigo); color: var(--suave); margin-right: 6px; }
+  pre, textarea.codigo { font: 14px/1.5 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+  pre { background: var(--codigo); padding: 12px; border-radius: 8px; overflow-x: auto; margin: 8px 0; white-space: pre; }
+  textarea { width: 100%; min-height: 160px; background: var(--codigo); border: 1px solid var(--borda);
+             border-radius: 8px; padding: 12px; tab-size: 4; resize: vertical; }
+  .lacunas { display: grid; gap: 8px; margin: 8px 0; }
+  .lacunas input { font-family: ui-monospace, Menlo, Consolas, monospace; }
+  button { border: 1px solid var(--borda); background: var(--painel); border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  button.principal { background: var(--acento); border-color: var(--acento); color: var(--acento-texto); font-weight: 600; }
+  button:disabled { opacity: .5; cursor: wait; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .resultado { border-radius: 8px; padding: 12px; margin-top: 12px; }
+  .resultado.ok { background: var(--ok-fundo); }
+  .resultado.falha { background: var(--erro-fundo); }
+  .resultado .erro { color: var(--erro); font-weight: 600; }
+  .dicas li { margin-bottom: 4px; }
+  #status { color: var(--suave); font-size: 13px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Laboratório de Missões</h1>
+  <p class="sub">Página de teste da Fase 1: gera missões, roda o código no Pyodide e avalia.</p>
+
+  <div class="barra">
+    <label>Missão <select id="modelo"></select></label>
+    <label>Semente <input id="semente" size="22"></label>
+    <button id="sortear">Sortear</button>
+    <button id="gerar" class="principal">Gerar missão</button>
+    <span id="status">Carregando Python no navegador…</span>
+  </div>
+
+  <section class="painel" id="missao" hidden>
+    <div id="etiquetas"></div>
+    <h2 id="titulo"></h2>
+    <p id="enunciado"></p>
+
+    <div id="bloco-codigo-fixo" hidden>
+      <strong>Código</strong>
+      <pre id="codigo-fixo"></pre>
+    </div>
+    <div id="bloco-saida-esperada" hidden>
+      <strong>Saída esperada</strong>
+      <pre id="saida-esperada"></pre>
+    </div>
+
+    <div id="bloco-prever" hidden>
+      <label>Sua previsão da saída <textarea id="previsao" class="codigo"></textarea></label>
+    </div>
+    <div id="bloco-lacunas" hidden>
+      <strong>Lacunas</strong>
+      <div class="lacunas" id="lacunas"></div>
+    </div>
+    <div id="bloco-editor" hidden>
+      <label>Seu código <textarea id="editor" class="codigo" spellcheck="false"></textarea></label>
+    </div>
+
+    <div class="acoes">
+      <button id="rodar">Rodar</button>
+      <button id="enviar" class="principal">Enviar</button>
+      <button id="dica">Pedir dica</button>
+    </div>
+    <ol class="dicas" id="dicas"></ol>
+    <div id="resultado"></div>
+  </section>
+</main>
+
+<script type="module">
+import { ExecutorPython } from "../executor/cliente.js";
+
+const $ = (id) => document.getElementById(id);
+const executor = new ExecutorPython();
+let missao = null;
+let tentativas = 0;
+let dicasMostradas = 0;
+
+function escapar(texto) {
+  return String(texto ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+function sortearSemente() {
+  $("semente").value = String(Math.floor(Math.random() * 1e12));
+}
+
+function respostaAtual() {
+  if (missao.formato === "prever") return $("previsao").value;
+  if (missao.formato === "completar") return [...$("lacunas").querySelectorAll("input")].map((i) => i.value);
+  return $("editor").value;
+}
+
+function codigoParaRodar() {
+  if (missao.formato !== "completar") return $("editor").value;
+  const valores = respostaAtual();
+  return missao.codigo.split("___").reduce((acc, parte, i) => acc + (i ? valores[i - 1] : "") + parte, "");
+}
+
+function mostrarErro(erro) {
+  const linha = erro.linha ? ` (linha ${erro.linha})` : "";
+  return `<p class="erro">${escapar(erro.mensagem)}${linha}</p>
+          <p>${escapar(erro.dica)}</p>
+          <p><small>Mensagem do Python: <code>${escapar(erro.original)}</code></small></p>`;
+}
+
+async function gerar() {
+  $("gerar").disabled = true;
+  try {
+    missao = await executor.gerar($("modelo").value, $("semente").value || "1");
+  } catch (e) {
+    $("status").textContent = `Erro ao gerar: ${e.message}`;
+    return;
+  } finally {
+    $("gerar").disabled = false;
+  }
+  tentativas = 0;
+  dicasMostradas = 0;
+  $("missao").hidden = false;
+  $("etiquetas").innerHTML = `<span class="etiqueta">${missao.formato}</span>` +
+    (missao.chefe ? `<span class="etiqueta">chefe da região</span>` : "") +
+    `<span class="etiqueta">${escapar(missao.regiao)}</span>`;
+  $("titulo").textContent = missao.titulo;
+  $("enunciado").textContent = missao.enunciado;
+
+  const f = missao.formato;
+  $("bloco-codigo-fixo").hidden = !(f === "prever" || f === "completar");
+  $("codigo-fixo").textContent = missao.codigo;
+  $("bloco-saida-esperada").hidden = missao.saida_esperada === null;
+  $("saida-esperada").textContent = missao.saida_esperada ?? "";
+  $("bloco-prever").hidden = f !== "prever";
+  $("previsao").value = "";
+  $("bloco-lacunas").hidden = f !== "completar";
+  $("lacunas").innerHTML = Array.from({ length: missao.lacunas },
+    (_, i) => `<label>Lacuna ${i + 1} <input autocomplete="off" spellcheck="false"></label>`).join("");
+  $("bloco-editor").hidden = !(f === "detetive" || f === "programa");
+  $("editor").value = missao.codigo;
+  $("rodar").hidden = f === "prever";
+  $("dicas").innerHTML = "";
+  $("resultado").innerHTML = "";
+}
+
+async function rodar() {
+  $("rodar").disabled = true;
+  try {
+    const r = await executor.rodar(codigoParaRodar(), missao.entradas_exemplo);
+    $("resultado").innerHTML = `<div class="resultado ${r.erro ? "falha" : ""}">
+      <strong>Saída</strong><pre>${escapar(r.saida) || "(nada foi mostrado)"}</pre>
+      ${r.erro ? mostrarErro(r.erro) : ""}</div>`;
+  } catch (e) {
+    $("resultado").innerHTML = `<div class="resultado falha"><p class="erro">${escapar(e.message)}</p></div>`;
+  } finally {
+    $("rodar").disabled = false;
+  }
+}
+
+async function enviar() {
+  $("enviar").disabled = true;
+  tentativas += 1;  // contado em silêncio: só aparece na conclusão
+  try {
+    const r = await executor.avaliar(missao.id, missao.semente, respostaAtual());
+    if (r.passou) {
+      const bonus = tentativas >= 4 ? " · Engenheiro persistente: bônus de energia!" : "";
+      $("resultado").innerHTML = `<div class="resultado ok"><strong>Missão concluída!</strong>
+        <p>${escapar(r.mensagem)}</p><p>Tentativas: ${tentativas}${bonus}</p></div>`;
+    } else {
+      $("resultado").innerHTML = `<div class="resultado falha"><p>${escapar(r.mensagem)}</p>
+        ${r.erro ? mostrarErro(r.erro) : ""}</div>`;
+    }
+  } catch (e) {
+    $("resultado").innerHTML = `<div class="resultado falha"><p class="erro">${escapar(e.message)}</p></div>`;
+  } finally {
+    $("enviar").disabled = false;
+  }
+}
+
+function dica() {
+  if (dicasMostradas >= missao.dicas.length) return;
+  $("dicas").insertAdjacentHTML("beforeend", `<li>${escapar(missao.dicas[dicasMostradas])}</li>`);
+  dicasMostradas += 1;
+}
+
+$("editor").addEventListener("keydown", (e) => {
+  if (e.key !== "Tab") return;
+  e.preventDefault();
+  const el = e.target;
+  const inicio = el.selectionStart;
+  el.value = el.value.slice(0, inicio) + "    " + el.value.slice(el.selectionEnd);
+  el.selectionStart = el.selectionEnd = inicio + 4;
+});
+$("sortear").onclick = sortearSemente;
+$("gerar").onclick = gerar;
+$("rodar").onclick = rodar;
+$("enviar").onclick = enviar;
+$("dica").onclick = dica;
+
+sortearSemente();
+try {
+  const modelos = await executor.listar();
+  $("modelo").innerHTML = modelos.map((m) =>
+    `<option value="${m.id}">${m.regiao} · ${m.formato}${m.chefe ? " (chefe)" : ""} · ${m.id}</option>`).join("");
+  $("status").textContent = `Python pronto · ${modelos.length} modelos`;
+} catch (e) {
+  $("status").textContent = `Falha ao carregar o Python: ${e.message}`;
+}
+
+// Autoteste de integração: ?autoteste=URL envia o relatório por POST para URL.
+const destinoAutoteste = new URLSearchParams(location.search).get("autoteste");
+if (destinoAutoteste) {
+  const relatorio = [];
+  const checar = (nome, condicao, detalhe = "") => relatorio.push({ nome, ok: !!condicao, detalhe });
+  try {
+    const modelos = await executor.listar();
+    checar("listar", modelos.length >= 5, `${modelos.length} modelos`);
+    for (const m of modelos) {
+      const g = await executor.gerar(m.id, "123456789");
+      checar(`gerar ${m.id}`, g.titulo && g.enunciado);
+      const r = await executor.avaliar(m.id, "123456789", m.formato === "completar" ? ["x"] : "resposta errada");
+      checar(`avaliar errado ${m.id}`, r.passou === false, r.mensagem);
+    }
+    const ok = await executor.rodar('n = int(input("n: "))\nprint("Dobro:", n * 2)', ["21"]);
+    checar("rodar com input", ok.saida === "Dobro: 42\n" && !ok.erro, JSON.stringify(ok));
+    const erro = await executor.rodar('Print("oi")');
+    checar("erro traduzido", erro.erro && erro.erro.conceito === "maiusculas", erro.erro && erro.erro.mensagem);
+    const t0 = performance.now();
+    const laco = await executor.rodar("while True:\n    pass");
+    const ms = Math.round(performance.now() - t0);
+    checar("laço infinito interrompido", laco.erro && laco.erro.tipo === "LimiteExecucao", `${ms} ms`);
+    const imp = await executor.rodar("import os");
+    checar("import bloqueado", imp.erro && imp.erro.tipo === "ImportError");
+  } catch (e) {
+    checar("exceção no autoteste", false, e.message);
+  }
+  await fetch(destinoAutoteste, { method: "POST", body: JSON.stringify(relatorio) });
+}
+</script>
+</body>
+</html>

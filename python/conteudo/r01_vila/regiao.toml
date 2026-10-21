@@ -1,0 +1,6 @@
+id = "vila"
+nome = "Vila (painel de controle)"
+ordem = 1
+aula = 1
+conceitos = ["print", "texto entre aspas", "ordem de execução", "vírgula e + no print", "linha em branco"]
+pre_requisitos = []

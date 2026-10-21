@@ -1,0 +1,12 @@
+[
+  "conteudo/__init__.py",
+  "conteudo/r01_vila/__init__.py",
+  "conteudo/r01_vila/desafios.py",
+  "conteudo/r01_vila/regiao.toml",
+  "ilha/__init__.py",
+  "ilha/api.py",
+  "ilha/comparador.py",
+  "ilha/desafio.py",
+  "ilha/erros.py",
+  "ilha/execucao.py"
+]
